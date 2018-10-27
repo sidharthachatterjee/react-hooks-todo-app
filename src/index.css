@@ -1,0 +1,23 @@
+@tailwind preflight;
+@tailwind components;
+@tailwind utilities;
+
+.todo {
+  @apply p-4 text-xl tracking-wide font-bold text-orange-light bg-white border-b-2 border-orange-lightest flex justify-start items-center;
+}
+
+.todo-bullet {
+  @apply appearance-none mr-4 ml-2 rounded-full bg-orange-lightest w-3 h-3;
+}
+
+.todo-input {
+  @apply border-2 border-orange-lighter rounded-none text-orange-light font-bold text-lg py-4 px-8 mb-4 outline-none appearance-none tracking-wide w-full;
+}
+
+h1 {
+  @apply text-xl uppercase tracking-wide my-8 text-orange-light font-extrabold;
+}
+
+.app {
+  @apply font-sans antialiased min-h-screen bg-orange-lightest flex flex-col justify-start items-center px-8;
+}
