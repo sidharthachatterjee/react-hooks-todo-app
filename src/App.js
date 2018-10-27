@@ -16,13 +16,12 @@ const App = () => {
   }
 
   const toggleTodo = id => {
-    setTodos({
-      ...todos,
-      [id]: {
-        ...todos[id],
-        checked: !todos[id].checked
-      }
-    })
+    const newTodos = { ...todos }
+    newTodos[id] = {
+      ...todos[id],
+      checked: !todos[id].checked
+    }
+    setTodos(newTodos)
   }
 
   const onKeyDownHandler = event => {
@@ -48,7 +47,7 @@ const App = () => {
       />
       <ul className="list-reset mt-4 w-full">
         {Object.keys(todos).map(id => (
-          <Todo id={id} todo={todos[id]} toggleTodo={toggleTodo} />
+          <Todo key={id} id={id} todo={todos[id]} toggleTodo={toggleTodo} />
         ))}
       </ul>
     </main>

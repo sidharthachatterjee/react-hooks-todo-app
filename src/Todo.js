@@ -3,7 +3,6 @@ import classNames from 'classnames'
 
 const Todo = ({ id, todo: { value, checked }, toggleTodo }) => (
   <li
-    key={id}
     onClick={() => toggleTodo(id)}
     className={classNames('todo', {
       'opacity-25': checked
