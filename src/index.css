@@ -21,3 +21,7 @@ h1 {
 .app {
   @apply font-sans antialiased min-h-screen bg-orange-lightest flex flex-col justify-start items-center px-8;
 }
+
+html {
+  -webkit-tap-highlight-color: transparent;
+}
