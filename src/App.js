@@ -1,12 +1,24 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import uuidv4 from 'uuid/v4'
 
 import Todo from './Todo'
 
 const App = () => {
   const [inputValue, setInputValue] = useState('')
-  const [todos, setTodos] = useState({})
+  const [todos, setTodos] = useState(() => {
+    const persistedValue = localStorage.getItem('todos');
+    
+    return (
+      persistedValue === null
+        ? {}
+        : JSON.parse(persistedValue)
+    );
+  });
 
+  useEffect(() => {
+    localStorage.setItem('todos', JSON.stringify(todos));
+  }, [todos]);
+  
   const addTodo = todo => {
     setInputValue('')
     setTodos({
